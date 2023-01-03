@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.Applications.Cms.Label }}
+  namespace: {{ .Values.Namespace }}
+  labels:
+    app: {{ .Values.Applications.Cms.Label }}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: {{ .Values.Applications.Cms.Label }}
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.Applications.Cms.Label }}
+    spec:
+      containers:
+        - name: {{ .Values.Applications.Cms.Label }}
+          image: {{ .Values.Applications.Cms.Image }}
+          env:
+          - name: NODE_ENV
+            value: {{ .Values.Applications.Cms.Environment }}
+          - name: url
+            value: {{ .Values.Applications.Cms.Url }}
+          ports:
+          - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 500m 
+              memory: 256Mi
