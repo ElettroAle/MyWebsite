@@ -9,7 +9,8 @@ Applications:
     Image: ghost #crclusterprod.azurecr.io/ghost
         
 Ingress:
-  Name: ingress-agw
+  Name: minimal-ingress
+  # Name: ingress-agw
   # Class: azure/application-gateway
   HostNames:
     Cms: elettroale.com

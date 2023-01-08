@@ -29,4 +29,4 @@ crash.log
 
 Old/*
 MyWebsite.Infrastructure/Old/*
-MyWebsite.Infrastructure/HelmChart/command.txt
+MyWebsite.Infrastructure/HelmChart/commands.txt
