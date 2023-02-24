@@ -6,7 +6,7 @@ metadata:
   labels:
     app: {{ .Values.Applications.Cms.Label }}
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: {{ .Values.Applications.Cms.Label }}
@@ -25,10 +25,10 @@ spec:
           env:
           - name: NODE_ENV
             value: {{ .Values.Applications.Cms.Environment }}
-          - name: url
-            value: {{ .Values.Applications.Cms.Url }}
+          # - name: url
+          #   value: {{ .Values.Applications.Cms.Url }}
           ports:
-          - containerPort: 80
+          - containerPort: 2368
           resources:
             requests:
               cpu: 100m

@@ -38,3 +38,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+ingress-nginx:
+  controller.service.loadBalancerIP: 51.124.221.158
