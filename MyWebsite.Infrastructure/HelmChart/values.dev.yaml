@@ -2,6 +2,8 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+Namespace: dev
+
 Applications:
   Cms:
     Label: cms
@@ -38,6 +40,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-ingress-nginx:
-  controller.service.loadBalancerIP: 51.124.221.158
